@@ -1,0 +1,239 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --accent-dark: #217dbb;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #333333;
+    --muted: #6b7785;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem 2.5rem;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+}
+
+header .tagline {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ===== Navigation ===== */
+nav {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 1.4rem;
+    font-weight: 500;
+    transition: background-color 0.25s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent);
+}
+
+/* ===== Main Layout ===== */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: var(--card);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+}
+
+/* ===== About ===== */
+#about img {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+#about p {
+    color: var(--muted);
+}
+
+#about::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ===== Skills ===== */
+dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem 1rem;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+dd {
+    color: var(--muted);
+}
+
+/* ===== Projects ===== */
+article {
+    border-left: 4px solid var(--accent);
+    background-color: #fbfcfd;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+}
+
+article h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+article a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Contact Form ===== */
+form p {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccd3da;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+button {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+button:hover {
+    background-color: var(--accent-dark);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #about img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+
+    dl {
+        grid-template-columns: 1fr;
+    }
+
+    dd {
+        margin-bottom: 0.5rem;
+    }
+}
